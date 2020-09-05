@@ -34,6 +34,9 @@ jobs:
       run: |
         cd build
         cmake ../src/llvm -GNinja -DCMAKE_BUILD_TYPE=${{ matrix.build }} -DCMAKE_C_COMPILER=/bin/clang -DCMAKE_CXX_COMPILER=/bin/clang++ -DCMAKE_ASM_COMPILER=/bin/clang
+    - name: build
+      run: |
+        cd build
         daemon & disown
         sleep 10
         awsBuilder=1 ninja -j1000
