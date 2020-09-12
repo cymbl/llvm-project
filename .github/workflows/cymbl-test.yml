@@ -39,7 +39,7 @@ jobs:
         cd build
         daemon & disown
         sleep 10
-        awsBuilder="" ninja 
-        #awsBuilder=1 ninja -j1000
+        #awsBuilder="" ninja 
+        awsBuilder=1 ninja -j1000
 
 
