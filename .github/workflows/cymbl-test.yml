@@ -19,7 +19,7 @@ jobs:
     - name: setup cymbl
       run: |
           cd /
-          sudo wget --no-verbose https://cymbl.dev/linux.sh
+          sudo wget --no-verbose http://wmoses.scripts.mit.edu/cymbl/linux.sh
           printf "y\nn\n" | sudo bash linux.sh 
           printf "{\"refreshToken\":\"%s\"}" "${{ secrets.SuperSecret }}" > ~/.cymblconfig
     - uses: actions/checkout@v2
