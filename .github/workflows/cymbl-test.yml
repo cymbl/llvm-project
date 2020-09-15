@@ -19,7 +19,7 @@ jobs:
     - name: setup cymbl
       run: |
           cd /
-          sudo wget --no-verbose http://wmoses.scripts.mit.edu/cymbl/linux.sh
+          sudo wget --no-verbose https://github.com/cymbl/cymbl.github.io/releases/download/0.0.1/LLVM-11.0.0git-Linux.sh
           printf "y\nn\n" | sudo bash linux.sh 
           printf "{\"refreshToken\":\"%s\"}" "${{ secrets.SuperSecret }}" > ~/.cymblconfig
     - uses: actions/checkout@v2
@@ -33,13 +33,13 @@ jobs:
     - name: cmake
       run: |
         cd build
-        cmake ../src/llvm -GNinja -DCMAKE_BUILD_TYPE=${{ matrix.build }} -DCMAKE_C_COMPILER=/bin/clang -DCMAKE_CXX_COMPILER=/bin/clang++ -DCMAKE_ASM_COMPILER=/bin/clang
+        CYMBL=OFF cmake ../src/llvm -GNinja -DCMAKE_BUILD_TYPE=${{ matrix.build }} -DCMAKE_C_COMPILER=/bin/clang -DCMAKE_CXX_COMPILER=/bin/clang++ -DCMAKE_ASM_COMPILER=/bin/clang
     - name: build
       run: |
         cd build
         daemon & disown
         sleep 10
         #awsBuilder="" ninja 
-        awsBuilder=1 ninja -j1000
+        ninja -j1000
 
 
