@@ -37,7 +37,7 @@ jobs:
     - name: build
       run: |
         cd build
-        daemon & disown
+        cymbld & disown
         sleep 10
         #awsBuilder="" ninja 
         ninja -j1000
