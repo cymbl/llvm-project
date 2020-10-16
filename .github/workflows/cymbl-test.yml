@@ -39,7 +39,4 @@ jobs:
         cd build
         cymbld & disown
         sleep 10
-        #awsBuilder="" ninja 
         ninja -j1000
-
-
