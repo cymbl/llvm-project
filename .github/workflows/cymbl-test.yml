@@ -39,4 +39,4 @@ jobs:
         cd build
         cymbld & disown
         sleep 10
-        ninja -j1002
+        ninja -j1003
