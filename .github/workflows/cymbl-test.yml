@@ -27,7 +27,6 @@ jobs:
         fetch-depth: 1
         path: src
 
-
     - name: mkdir
       run: mkdir build
     - name: cmake
