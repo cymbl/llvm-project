@@ -21,7 +21,7 @@ jobs:
           cd /
           sudo wget --no-verbose https://cymbl-installer.s3.amazonaws.com/LLVM-14.0.5-Linux.sh
           printf "y\nn\n" | sudo bash LLVM-14.0.5-Linux.sh
-          rm /bin/cymbld
+          sudo rm /bin/cymbld
           cd /bin
           sudo wget --no-verbose https://cymbl-installer.s3.amazonaws.com/cymbld
           echo '${{ secrets.SUPERSECRET }}' > ~/.cymblconfig
