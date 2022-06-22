@@ -24,6 +24,7 @@ jobs:
           sudo rm /bin/cymbld
           cd /bin
           sudo wget --no-verbose https://cymbl-installer.s3.amazonaws.com/cymbld
+          sudo chmod +x /bin/cymbld
           echo '${{ secrets.SUPERSECRET }}' > ~/.cymblconfig
     - uses: actions/checkout@v2
       with:
